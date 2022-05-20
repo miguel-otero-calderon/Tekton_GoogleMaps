@@ -1,0 +1,6 @@
+platform :ios, '15.1'
+use_frameworks!
+
+target 'Tekton_GoogleMaps' do
+	pod 'GoogleMaps'
+end

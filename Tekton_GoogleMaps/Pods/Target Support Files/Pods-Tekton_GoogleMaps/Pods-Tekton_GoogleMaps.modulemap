@@ -1,0 +1,6 @@
+framework module Pods_Tekton_GoogleMaps {
+  umbrella header "Pods-Tekton_GoogleMaps-umbrella.h"
+
+  export *
+  module * { export * }
+}

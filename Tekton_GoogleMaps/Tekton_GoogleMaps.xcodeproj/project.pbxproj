@@ -9,10 +9,20 @@
 /* Begin PBXBuildFile section */
 		4C3422A92837D912005886A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3422A82837D912005886A9 /* AppDelegate.swift */; };
 		4C3422AB2837D912005886A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3422AA2837D912005886A9 /* SceneDelegate.swift */; };
-		4C3422AD2837D912005886A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3422AC2837D912005886A9 /* ViewController.swift */; };
+		4C3422AD2837D912005886A9 /* CurrrentRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3422AC2837D912005886A9 /* CurrrentRideViewController.swift */; };
 		4C3422B02837D912005886A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3422AE2837D912005886A9 /* Main.storyboard */; };
 		4C3422B22837D916005886A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C3422B12837D916005886A9 /* Assets.xcassets */; };
 		4C3422B52837D916005886A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3422B32837D916005886A9 /* LaunchScreen.storyboard */; };
+		4C4A873B28383A070011A48B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A873A28383A070011A48B /* MapViewController.swift */; };
+		4C4A873D28383A2A0011A48B /* TypesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A873C28383A290011A48B /* TypesTableViewController.swift */; };
+		4C4A874428383A620011A48B /* GoogleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A873F28383A620011A48B /* GoogleDataProvider.swift */; };
+		4C4A874528383A620011A48B /* CLLocationCoordinate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A874028383A620011A48B /* CLLocationCoordinate+Extensions.swift */; };
+		4C4A874628383A620011A48B /* PlaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A874128383A620011A48B /* PlaceMarker.swift */; };
+		4C4A874728383A620011A48B /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A874228383A620011A48B /* Metadata.swift */; };
+		4C4A874828383A620011A48B /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A874328383A620011A48B /* GooglePlace.swift */; };
+		4C4A874B28383A9F0011A48B /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A874A28383A9F0011A48B /* MarkerInfoView.swift */; };
+		4C4A874D28383B0F0011A48B /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4A874C28383B0F0011A48B /* MarkerInfoView.xib */; };
+		4C4A874F28383B400011A48B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A874E28383B400011A48B /* UIView+Extensions.swift */; };
 		DC0FD31C7A1F135CD4C646DF /* Pods_Tekton_GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63B30BAA439BAC5D20CE816 /* Pods_Tekton_GoogleMaps.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,11 +30,21 @@
 		4C3422A52837D912005886A9 /* Tekton_GoogleMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tekton_GoogleMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C3422A82837D912005886A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C3422AA2837D912005886A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4C3422AC2837D912005886A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4C3422AC2837D912005886A9 /* CurrrentRideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrrentRideViewController.swift; sourceTree = "<group>"; };
 		4C3422AF2837D912005886A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C3422B12837D916005886A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C3422B42837D916005886A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C3422B62837D916005886A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C4A873A28383A070011A48B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4C4A873C28383A290011A48B /* TypesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesTableViewController.swift; sourceTree = "<group>"; };
+		4C4A873F28383A620011A48B /* GoogleDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleDataProvider.swift; sourceTree = "<group>"; };
+		4C4A874028383A620011A48B /* CLLocationCoordinate+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate+Extensions.swift"; sourceTree = "<group>"; };
+		4C4A874128383A620011A48B /* PlaceMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
+		4C4A874228383A620011A48B /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		4C4A874328383A620011A48B /* GooglePlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
+		4C4A874A28383A9F0011A48B /* MarkerInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerInfoView.swift; sourceTree = "<group>"; };
+		4C4A874C28383B0F0011A48B /* MarkerInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkerInfoView.xib; sourceTree = "<group>"; };
+		4C4A874E28383B400011A48B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		539B0E50DD1861359BA9C40B /* Pods-Tekton_GoogleMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tekton_GoogleMaps.debug.xcconfig"; path = "Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps.debug.xcconfig"; sourceTree = "<group>"; };
 		E61313BAE4BEE59785841D9F /* Pods-Tekton_GoogleMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tekton_GoogleMaps.release.xcconfig"; path = "Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps.release.xcconfig"; sourceTree = "<group>"; };
 		F63B30BAA439BAC5D20CE816 /* Pods_Tekton_GoogleMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tekton_GoogleMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,13 +85,47 @@
 			children = (
 				4C3422A82837D912005886A9 /* AppDelegate.swift */,
 				4C3422AA2837D912005886A9 /* SceneDelegate.swift */,
-				4C3422AC2837D912005886A9 /* ViewController.swift */,
+				4C4A874928383A820011A48B /* Views */,
+				4C4A8739283839E90011A48B /* Controllers */,
+				4C4A873E28383A3C0011A48B /* Model */,
+				4C3422AC2837D912005886A9 /* CurrrentRideViewController.swift */,
 				4C3422AE2837D912005886A9 /* Main.storyboard */,
-				4C3422B12837D916005886A9 /* Assets.xcassets */,
 				4C3422B32837D916005886A9 /* LaunchScreen.storyboard */,
+				4C3422B12837D916005886A9 /* Assets.xcassets */,
 				4C3422B62837D916005886A9 /* Info.plist */,
+				4C4A874E28383B400011A48B /* UIView+Extensions.swift */,
 			);
 			path = Tekton_GoogleMaps;
+			sourceTree = "<group>";
+		};
+		4C4A8739283839E90011A48B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4C4A873A28383A070011A48B /* MapViewController.swift */,
+				4C4A873C28383A290011A48B /* TypesTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4C4A873E28383A3C0011A48B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C4A874028383A620011A48B /* CLLocationCoordinate+Extensions.swift */,
+				4C4A873F28383A620011A48B /* GoogleDataProvider.swift */,
+				4C4A874328383A620011A48B /* GooglePlace.swift */,
+				4C4A874228383A620011A48B /* Metadata.swift */,
+				4C4A874128383A620011A48B /* PlaceMarker.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C4A874928383A820011A48B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C4A874A28383A9F0011A48B /* MarkerInfoView.swift */,
+				4C4A874C28383B0F0011A48B /* MarkerInfoView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		969783759FD0A9C0BEABD1D0 /* Pods */ = {
@@ -80,7 +134,6 @@
 				539B0E50DD1861359BA9C40B /* Pods-Tekton_GoogleMaps.debug.xcconfig */,
 				E61313BAE4BEE59785841D9F /* Pods-Tekton_GoogleMaps.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -152,6 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C4A874D28383B0F0011A48B /* MarkerInfoView.xib in Resources */,
 				4C3422B52837D916005886A9 /* LaunchScreen.storyboard in Resources */,
 				4C3422B22837D916005886A9 /* Assets.xcassets in Resources */,
 				4C3422B02837D912005886A9 /* Main.storyboard in Resources */,
@@ -207,9 +261,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C3422AD2837D912005886A9 /* ViewController.swift in Sources */,
+				4C3422AD2837D912005886A9 /* CurrrentRideViewController.swift in Sources */,
+				4C4A874428383A620011A48B /* GoogleDataProvider.swift in Sources */,
+				4C4A874828383A620011A48B /* GooglePlace.swift in Sources */,
+				4C4A874528383A620011A48B /* CLLocationCoordinate+Extensions.swift in Sources */,
+				4C4A874628383A620011A48B /* PlaceMarker.swift in Sources */,
+				4C4A873D28383A2A0011A48B /* TypesTableViewController.swift in Sources */,
+				4C4A874F28383B400011A48B /* UIView+Extensions.swift in Sources */,
 				4C3422A92837D912005886A9 /* AppDelegate.swift in Sources */,
 				4C3422AB2837D912005886A9 /* SceneDelegate.swift in Sources */,
+				4C4A874B28383A9F0011A48B /* MarkerInfoView.swift in Sources */,
+				4C4A874728383A620011A48B /* Metadata.swift in Sources */,
+				4C4A873B28383A070011A48B /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

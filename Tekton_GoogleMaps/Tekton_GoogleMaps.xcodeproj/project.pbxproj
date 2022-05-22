@@ -29,6 +29,8 @@
 		4C998612283A312A0082A884 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C998611283A312A0082A884 /* UIColor+Extensions.swift */; };
 		4C998615283A31F30082A884 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C998614283A31F30082A884 /* Toast.swift */; };
 		4C998617283A32230082A884 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C998616283A32230082A884 /* Colors.swift */; };
+		4C99861B283A3F890082A884 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99861A283A3F890082A884 /* MapViewModel.swift */; };
+		4C99861D283A3F9F0082A884 /* MapViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99861C283A3F9F0082A884 /* MapViewPresenter.swift */; };
 		DC0FD31C7A1F135CD4C646DF /* Pods_Tekton_GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63B30BAA439BAC5D20CE816 /* Pods_Tekton_GoogleMaps.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		4C998611283A312A0082A884 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		4C998614283A31F30082A884 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		4C998616283A32230082A884 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		4C99861A283A3F890082A884 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		4C99861C283A3F9F0082A884 /* MapViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewPresenter.swift; sourceTree = "<group>"; };
 		539B0E50DD1861359BA9C40B /* Pods-Tekton_GoogleMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tekton_GoogleMaps.debug.xcconfig"; path = "Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps.debug.xcconfig"; sourceTree = "<group>"; };
 		E61313BAE4BEE59785841D9F /* Pods-Tekton_GoogleMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tekton_GoogleMaps.release.xcconfig"; path = "Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps.release.xcconfig"; sourceTree = "<group>"; };
 		F63B30BAA439BAC5D20CE816 /* Pods_Tekton_GoogleMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tekton_GoogleMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +101,7 @@
 			children = (
 				4C3422A82837D912005886A9 /* AppDelegate.swift */,
 				4C3422AA2837D912005886A9 /* SceneDelegate.swift */,
+				4C998618283A3F550082A884 /* Modules */,
 				4C4A874928383A820011A48B /* Views */,
 				4C4A8739283839E90011A48B /* Controllers */,
 				4C4A873E28383A3C0011A48B /* Model */,
@@ -114,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				4C4A8752283844170011A48B /* MyProgressCell */,
-				4C4A873A28383A070011A48B /* MapViewController.swift */,
 				4C4A873C28383A290011A48B /* TypesTableViewController.swift */,
 				4C4A87502838434A0011A48B /* MyProgressViewController.swift */,
 				4C8BB7A82839414E004BD2EE /* TimerViewController.swift */,
@@ -168,6 +172,24 @@
 				4C998616283A32230082A884 /* Colors.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		4C998618283A3F550082A884 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4C998619283A3F6C0082A884 /* MapView */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4C998619283A3F6C0082A884 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				4C4A873A28383A070011A48B /* MapViewController.swift */,
+				4C99861A283A3F890082A884 /* MapViewModel.swift */,
+				4C99861C283A3F9F0082A884 /* MapViewPresenter.swift */,
+			);
+			path = MapView;
 			sourceTree = "<group>";
 		};
 		969783759FD0A9C0BEABD1D0 /* Pods */ = {
@@ -310,6 +332,7 @@
 				4C998617283A32230082A884 /* Colors.swift in Sources */,
 				4C4A874528383A620011A48B /* CLLocationCoordinate+Extensions.swift in Sources */,
 				4C4A874628383A620011A48B /* PlaceMarker.swift in Sources */,
+				4C99861D283A3F9F0082A884 /* MapViewPresenter.swift in Sources */,
 				4C4A873D28383A2A0011A48B /* TypesTableViewController.swift in Sources */,
 				4C4A874F28383B400011A48B /* UIView+Extensions.swift in Sources */,
 				4C3422A92837D912005886A9 /* AppDelegate.swift in Sources */,
@@ -321,6 +344,7 @@
 				4C4A874B28383A9F0011A48B /* MarkerInfoView.swift in Sources */,
 				4C4A874728383A620011A48B /* Metadata.swift in Sources */,
 				4C4A873B28383A070011A48B /* MapViewController.swift in Sources */,
+				4C99861B283A3F890082A884 /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

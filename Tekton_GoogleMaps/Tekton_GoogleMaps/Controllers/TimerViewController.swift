@@ -8,12 +8,16 @@
 import Foundation
 import UIKit
 
+protocol TimerViewControllerDelegate {
+    func starLocation()
+    func stopLocation()
+}
+
 class TimerViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var starLabel: UILabel!
     @IBOutlet weak var stopLabel: UILabel!
     @IBOutlet weak var bodyView: UIView!
-    
     @IBOutlet weak var starButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     
@@ -21,6 +25,7 @@ class TimerViewController: UIViewController {
     var timerCounting: Bool = false
     var seconds: Int = 0
     static let identifier = "TimerViewController"
+    var delegate:TimerViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +49,7 @@ class TimerViewController: UIViewController {
         starLabel.textColor = UIColor.gray
         starButton.isEnabled = false
         stopButton.isEnabled = true
+        delegate?.starLocation()
     }
     
     @IBAction func stopAction(_ sender: Any) {
@@ -53,6 +59,7 @@ class TimerViewController: UIViewController {
         stopLabel.textColor = UIColor.gray
         starButton.isEnabled = true
         stopButton.isEnabled = false
+        delegate?.stopLocation()
     }
     
     @objc func timerEvent() {

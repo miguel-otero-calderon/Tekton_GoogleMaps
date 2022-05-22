@@ -16,7 +16,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MIh-YW-9AN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="0.5568627451" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="SsB-Gn-jXC"/>
@@ -25,7 +26,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="962-BZ-WZh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="732" y="797"/>
+            <point key="canvasLocation" x="625" y="797"/>
         </scene>
         <!--Current Ride-->
         <scene sceneID="ufC-wZ-h7g">
@@ -67,7 +68,7 @@
                                 <rect key="frame" x="0.0" y="56" width="375" height="511"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SU2-Pn-A8u">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SU2-Pn-A8u">
                                 <rect key="frame" x="0.0" y="578" width="375" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -172,13 +173,13 @@
         <!--Timer View Controller-->
         <scene sceneID="tVg-vq-c15">
             <objects>
-                <viewController storyboardIdentifier="TimerViewController" modalPresentationStyle="currentContext" id="ZhH-a5-Ujl" customClass="TimerViewController" customModule="Tekton_GoogleMaps" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9dq-Il-tJy" userLabel="Content View">
+                <viewController storyboardIdentifier="TimerViewController" modalPresentationStyle="overCurrentContext" id="ZhH-a5-Ujl" customClass="TimerViewController" customModule="Tekton_GoogleMaps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="9dq-Il-tJy" userLabel="Content View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vga-mc-qO6">
-                                <rect key="frame" x="20" y="467" width="335" height="180"/>
+                                <rect key="frame" x="20" y="387" width="335" height="180"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 : 00 : 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPb-5Y-KMK">
                                         <rect key="frame" x="92" y="30" width="151.5" height="36"/>
@@ -238,7 +239,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="gw0-u5-zAs" firstAttribute="leading" secondItem="YEG-ji-k5i" secondAttribute="trailing" constant="22" id="5Hg-04-7LZ"/>
                                     <constraint firstItem="sPb-5Y-KMK" firstAttribute="top" secondItem="vga-mc-qO6" secondAttribute="top" constant="30" id="6FC-9Q-SWU"/>
@@ -261,13 +262,14 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="n8b-HZ-Mhx"/>
-                        <color key="backgroundColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="0.23574606788079469" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="n8b-HZ-Mhx" firstAttribute="bottom" secondItem="vga-mc-qO6" secondAttribute="bottom" constant="20" id="H7E-Fn-PTs"/>
+                            <constraint firstItem="n8b-HZ-Mhx" firstAttribute="bottom" secondItem="vga-mc-qO6" secondAttribute="bottom" constant="100" id="H7E-Fn-PTs"/>
                             <constraint firstItem="n8b-HZ-Mhx" firstAttribute="trailing" secondItem="vga-mc-qO6" secondAttribute="trailing" constant="20" id="IbS-rN-LyV"/>
                             <constraint firstItem="vga-mc-qO6" firstAttribute="leading" secondItem="n8b-HZ-Mhx" secondAttribute="leading" constant="20" id="OV3-Oq-ox9"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="EGr-CO-sP0"/>
                     <connections>
                         <outlet property="bodyView" destination="vga-mc-qO6" id="tHB-vV-xji"/>
                         <outlet property="starButton" destination="a9R-8P-6xj" id="ZzP-YN-1fI"/>
@@ -279,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJx-UO-JTC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2145" y="1478"/>
+            <point key="canvasLocation" x="2145" y="1491"/>
         </scene>
         <!--Choose Types-->
         <scene sceneID="gir-OY-7YJ">

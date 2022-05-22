@@ -25,7 +25,6 @@
 		4C4A87512838434A0011A48B /* MyProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A87502838434A0011A48B /* MyProgressViewController.swift */; };
 		4C4A8755283844310011A48B /* MyProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A8753283844310011A48B /* MyProgressCell.swift */; };
 		4C4A8756283844310011A48B /* MyProgressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4A8754283844310011A48B /* MyProgressCell.xib */; };
-		4C8BB7A92839414E004BD2EE /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8BB7A82839414E004BD2EE /* TimerViewController.swift */; };
 		4C998612283A312A0082A884 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C998611283A312A0082A884 /* UIColor+Extensions.swift */; };
 		4C998615283A31F30082A884 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C998614283A31F30082A884 /* Toast.swift */; };
 		4C998617283A32230082A884 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C998616283A32230082A884 /* Colors.swift */; };
@@ -55,7 +54,6 @@
 		4C4A87502838434A0011A48B /* MyProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProgressViewController.swift; sourceTree = "<group>"; };
 		4C4A8753283844310011A48B /* MyProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProgressCell.swift; sourceTree = "<group>"; };
 		4C4A8754283844310011A48B /* MyProgressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProgressCell.xib; sourceTree = "<group>"; };
-		4C8BB7A82839414E004BD2EE /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		4C998611283A312A0082A884 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		4C998614283A31F30082A884 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		4C998616283A32230082A884 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				4C4A8752283844170011A48B /* MyProgressCell */,
 				4C4A873C28383A290011A48B /* TypesTableViewController.swift */,
 				4C4A87502838434A0011A48B /* MyProgressViewController.swift */,
-				4C8BB7A82839414E004BD2EE /* TimerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -338,7 +335,6 @@
 				4C3422A92837D912005886A9 /* AppDelegate.swift in Sources */,
 				4C4A87512838434A0011A48B /* MyProgressViewController.swift in Sources */,
 				4C3422AB2837D912005886A9 /* SceneDelegate.swift in Sources */,
-				4C8BB7A92839414E004BD2EE /* TimerViewController.swift in Sources */,
 				4C998612283A312A0082A884 /* UIColor+Extensions.swift in Sources */,
 				4C4A8755283844310011A48B /* MyProgressCell.swift in Sources */,
 				4C4A874B28383A9F0011A48B /* MarkerInfoView.swift in Sources */,

@@ -135,3 +135,10 @@ enum FontTypes {
     case thin
     case icon
 }
+
+func getIntRandom() -> Int {
+    return Int.random(in: 100..<999)
+}
+func getId() -> String {
+    return "\(getIntRandom())-\(getIntRandom())-\(getIntRandom())"
+}

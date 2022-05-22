@@ -2,7 +2,7 @@ import UIKit
 import GoogleMaps
 
 protocol MapViewControllerProtocol {
-    func getAddress(address: GMSAddress)
+    func getLocation(location: MapViewModel.Location)
 }
 
 class MapViewController: UIViewController {
@@ -11,12 +11,21 @@ class MapViewController: UIViewController {
     @IBOutlet private weak var mapCenterPinImage: UIImageView!
     @IBOutlet private weak var pinImageVerticalConstraint: NSLayoutConstraint!
     
+    //timerView
+    @IBOutlet weak var timerView: UIView!
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var starLabel: UILabel!
+    @IBOutlet weak var stopLabel: UILabel!
+    @IBOutlet weak var starButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
+    var timer:Timer = Timer()
+    var seconds: Int = 0
+    
     private var searchedTypes = ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant"]
     private let locationManager = CLLocationManager()
     private let dataProvider = GoogleDataProvider()
     private let searchRadius: Double = 1000
-    private var myStarLocation:MapViewLocation?
-    private var myEndLocation:MapViewLocation?
+    private var route:MapViewModel.Route?
     private var presenter:MapViewPresenter?
     
     override func viewDidLoad() {
@@ -34,6 +43,36 @@ class MapViewController: UIViewController {
         }
         
         mapView.delegate = self
+        timerView.isHidden = true
+        timerView.layer.cornerRadius = 24
+    }
+    
+    @IBAction func starAction(_ sender: Any) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerEvent), userInfo: nil, repeats: true)
+        stopLabel.textColor = UIColor.orange
+        starLabel.textColor = UIColor.gray
+        starButton.isEnabled = false
+        stopButton.isEnabled = true
+        locationManager.requestLocation()
+    }
+    
+    @IBAction func stopAction(_ sender: Any) {
+        timer.invalidate()
+        starLabel.textColor = UIColor.orange
+        stopLabel.textColor = UIColor.gray
+        starButton.isEnabled = true
+        stopButton.isEnabled = false
+        locationManager.requestLocation()
+        timerView.isHidden = true
+    }
+    
+    @objc func timerEvent() {
+        seconds = seconds + 1
+        guard let time = presenter?.secondsToHoursMinutesSeconds(seconds: seconds) else {
+            return
+        }
+        let timeString = presenter?.makeTimeString(hours: time.0, minutes: time.1, seconds: time.2)
+        timerLabel.text = timeString
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,10 +87,7 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func addButtonAction(_ sender: UIButton) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let timerViewController = storyBoard.instantiateViewController(withIdentifier: TimerViewController.identifier) as! TimerViewController
-        timerViewController.delegate = self
-        self.present(timerViewController, animated: true)
+        timerView.isHidden = false
     }
 }
 
@@ -103,11 +139,7 @@ extension MapViewController: CLLocationManagerDelegate {
             return
         }
         
-        if myStarLocation == nil {
-            myStarLocation = MapViewLocation(location: location, address: nil)
-        } else {
-            myEndLocation = MapViewLocation(location: location, address: "")
-        }
+        self.presenter?.getAddress(coordinate: location.coordinate)
         
         mapView.camera = GMSCameraPosition(
             target: location.coordinate,
@@ -149,14 +181,6 @@ extension MapViewController: GMSMapViewDelegate {
         infoView.nameLabel.text = placeMarker.place.name
         infoView.addressLabel.text = placeMarker.place.address
         
-        if myStarLocation != nil {
-            if myStarLocation?.address == nil {
-                myStarLocation?.address = placeMarker.place.address
-            }
-        }
-        if myEndLocation != nil {
-            myEndLocation?.address = placeMarker.place.address
-        }
         return infoView
     }
     
@@ -172,22 +196,20 @@ extension MapViewController: GMSMapViewDelegate {
     }
 }
 
-extension MapViewController: TimerViewControllerDelegate {
-    func starLocation() {
-        print("star:\(myStarLocation)")
-    }
-    
-    func stopLocation() {
-        print("end location:\(myEndLocation)")
-    }
-}
 extension MapViewController: MapViewControllerProtocol {
-    func getAddress(address: GMSAddress) {
-        
-        guard let lines = address.lines else { return }
-        
+    func getLocation(location: MapViewModel.Location) {
+        if route == nil {
+            route = MapViewModel.Route(source: location, destination: nil)
+        } else {
+            if let source = route?.source {
+                route = MapViewModel.Route(source: source, destination: location)
+                //guardar route
+                print("route: \(route!)")
+            }
+        }
+        //UI
         self.addressLabel.unlock()
-        self.addressLabel.text = lines.joined(separator: "\n")
+        self.addressLabel.text = location.address
         
         let labelHeight = self.addressLabel.intrinsicContentSize.height
         let topInset = self.view.safeAreaInsets.top

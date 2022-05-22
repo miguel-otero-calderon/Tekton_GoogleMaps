@@ -10,5 +10,5 @@ import CoreLocation
 
 struct MapViewLocation {
     let location: CLLocation
-    let address: String
+    var address: String?
 }

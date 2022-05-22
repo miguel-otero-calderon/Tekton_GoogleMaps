@@ -1,6 +1,10 @@
 import UIKit
 import GoogleMaps
 
+protocol MapViewControllerProtocol {
+    func getAddress(address: GMSAddress)
+}
+
 class MapViewController: UIViewController {
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var mapView: GMSMapView!
@@ -11,22 +15,14 @@ class MapViewController: UIViewController {
     private let locationManager = CLLocationManager()
     private let dataProvider = GoogleDataProvider()
     private let searchRadius: Double = 1000
-    private var star:MapViewLocation?
-    private var end:MapViewLocation?
+    private var myStarLocation:MapViewLocation?
+    private var myEndLocation:MapViewLocation?
+    private var presenter:MapViewPresenter?
     
-    @IBAction func addButtonAction(_ sender: UIButton) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let timerViewController = storyBoard.instantiateViewController(withIdentifier: TimerViewController.identifier) as! TimerViewController
-        timerViewController.delegate = self
-        self.present(timerViewController, animated: true)
-    }
-}
-
-// MARK: - Lifecycle
-extension MapViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        presenter = MapViewPresenter(view: self)
         locationManager.delegate = self
         
         if CLLocationManager.locationServicesEnabled() {
@@ -50,6 +46,13 @@ extension MapViewController {
         controller.selectedTypes = searchedTypes
         controller.delegate = self
     }
+    
+    @IBAction func addButtonAction(_ sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let timerViewController = storyBoard.instantiateViewController(withIdentifier: TimerViewController.identifier) as! TimerViewController
+        timerViewController.delegate = self
+        self.present(timerViewController, animated: true)
+    }
 }
 
 // MARK: - Actions
@@ -69,36 +72,6 @@ extension MapViewController {
             places.forEach { place in
                 let marker = PlaceMarker(place: place, availableTypes: self.searchedTypes)
                 marker.map = self.mapView
-            }
-        }
-    }
-    
-    func reverseGeocode(coordinate: CLLocationCoordinate2D) {
-        let geocoder = GMSGeocoder()
-        
-        geocoder.reverseGeocodeCoordinate(coordinate) { response, error in
-            self.addressLabel.unlock()
-            
-            guard
-                let address = response?.firstResult(),
-                let lines = address.lines
-            else {
-                return
-            }
-            
-            self.addressLabel.text = lines.joined(separator: "\n")
-            
-            let labelHeight = self.addressLabel.intrinsicContentSize.height
-            let topInset = self.view.safeAreaInsets.top
-            self.mapView.padding = UIEdgeInsets(
-                top: topInset,
-                left: 0,
-                bottom: labelHeight,
-                right: 0)
-            
-            UIView.animate(withDuration: 0.25) {
-                self.pinImageVerticalConstraint.constant = (labelHeight - topInset) * 0.5
-                self.view.layoutIfNeeded()
             }
         }
     }
@@ -130,6 +103,12 @@ extension MapViewController: CLLocationManagerDelegate {
             return
         }
         
+        if myStarLocation == nil {
+            myStarLocation = MapViewLocation(location: location, address: nil)
+        } else {
+            myEndLocation = MapViewLocation(location: location, address: "")
+        }
+        
         mapView.camera = GMSCameraPosition(
             target: location.coordinate,
             zoom: 15,
@@ -137,9 +116,6 @@ extension MapViewController: CLLocationManagerDelegate {
             viewingAngle: 0)
         fetchPlaces(near: location.coordinate)
         
-        if star == nil {
-            star = MapViewLocation(location: location, address: <#T##String#>)
-        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -150,7 +126,7 @@ extension MapViewController: CLLocationManagerDelegate {
 // MARK: - GMSMapViewDelegate
 extension MapViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
-        reverseGeocode(coordinate: position.target)
+        presenter?.getAddress(coordinate: position.target)
     }
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
@@ -173,6 +149,14 @@ extension MapViewController: GMSMapViewDelegate {
         infoView.nameLabel.text = placeMarker.place.name
         infoView.addressLabel.text = placeMarker.place.address
         
+        if myStarLocation != nil {
+            if myStarLocation?.address == nil {
+                myStarLocation?.address = placeMarker.place.address
+            }
+        }
+        if myEndLocation != nil {
+            myEndLocation?.address = placeMarker.place.address
+        }
         return infoView
     }
     
@@ -190,10 +174,32 @@ extension MapViewController: GMSMapViewDelegate {
 
 extension MapViewController: TimerViewControllerDelegate {
     func starLocation() {
-        
+        print("star:\(myStarLocation)")
     }
     
     func stopLocation() {
+        print("end location:\(myEndLocation)")
+    }
+}
+extension MapViewController: MapViewControllerProtocol {
+    func getAddress(address: GMSAddress) {
         
+        guard let lines = address.lines else { return }
+        
+        self.addressLabel.unlock()
+        self.addressLabel.text = lines.joined(separator: "\n")
+        
+        let labelHeight = self.addressLabel.intrinsicContentSize.height
+        let topInset = self.view.safeAreaInsets.top
+        self.mapView.padding = UIEdgeInsets(
+            top: topInset,
+            left: 0,
+            bottom: labelHeight,
+            right: 0)
+        
+        UIView.animate(withDuration: 0.25) {
+            self.pinImageVerticalConstraint.constant = (labelHeight - topInset) * 0.5
+            self.view.layoutIfNeeded()
+        }
     }
 }

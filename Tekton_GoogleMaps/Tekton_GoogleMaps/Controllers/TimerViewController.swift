@@ -60,6 +60,7 @@ class TimerViewController: UIViewController {
         starButton.isEnabled = true
         stopButton.isEnabled = false
         delegate?.stopLocation()
+        self.dismiss(animated: true)
     }
     
     @objc func timerEvent() {

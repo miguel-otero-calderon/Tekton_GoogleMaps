@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4C3422A92837D912005886A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3422A82837D912005886A9 /* AppDelegate.swift */; };
 		4C3422AB2837D912005886A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3422AA2837D912005886A9 /* SceneDelegate.swift */; };
-		4C3422AD2837D912005886A9 /* CurrrentRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3422AC2837D912005886A9 /* CurrrentRideViewController.swift */; };
 		4C3422B02837D912005886A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3422AE2837D912005886A9 /* Main.storyboard */; };
 		4C3422B22837D916005886A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C3422B12837D916005886A9 /* Assets.xcassets */; };
 		4C3422B52837D916005886A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3422B32837D916005886A9 /* LaunchScreen.storyboard */; };
@@ -26,6 +25,10 @@
 		4C4A87512838434A0011A48B /* MyProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A87502838434A0011A48B /* MyProgressViewController.swift */; };
 		4C4A8755283844310011A48B /* MyProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A8753283844310011A48B /* MyProgressCell.swift */; };
 		4C4A8756283844310011A48B /* MyProgressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4A8754283844310011A48B /* MyProgressCell.xib */; };
+		4C8BB7A92839414E004BD2EE /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8BB7A82839414E004BD2EE /* TimerViewController.swift */; };
+		4C998612283A312A0082A884 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C998611283A312A0082A884 /* UIColor+Extensions.swift */; };
+		4C998615283A31F30082A884 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C998614283A31F30082A884 /* Toast.swift */; };
+		4C998617283A32230082A884 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C998616283A32230082A884 /* Colors.swift */; };
 		DC0FD31C7A1F135CD4C646DF /* Pods_Tekton_GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63B30BAA439BAC5D20CE816 /* Pods_Tekton_GoogleMaps.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +36,6 @@
 		4C3422A52837D912005886A9 /* Tekton_GoogleMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tekton_GoogleMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C3422A82837D912005886A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C3422AA2837D912005886A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4C3422AC2837D912005886A9 /* CurrrentRideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrrentRideViewController.swift; sourceTree = "<group>"; };
 		4C3422AF2837D912005886A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C3422B12837D916005886A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C3422B42837D916005886A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +53,10 @@
 		4C4A87502838434A0011A48B /* MyProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProgressViewController.swift; sourceTree = "<group>"; };
 		4C4A8753283844310011A48B /* MyProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProgressCell.swift; sourceTree = "<group>"; };
 		4C4A8754283844310011A48B /* MyProgressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProgressCell.xib; sourceTree = "<group>"; };
+		4C8BB7A82839414E004BD2EE /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		4C998611283A312A0082A884 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		4C998614283A31F30082A884 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		4C998616283A32230082A884 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		539B0E50DD1861359BA9C40B /* Pods-Tekton_GoogleMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tekton_GoogleMaps.debug.xcconfig"; path = "Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps.debug.xcconfig"; sourceTree = "<group>"; };
 		E61313BAE4BEE59785841D9F /* Pods-Tekton_GoogleMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tekton_GoogleMaps.release.xcconfig"; path = "Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps.release.xcconfig"; sourceTree = "<group>"; };
 		F63B30BAA439BAC5D20CE816 /* Pods_Tekton_GoogleMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tekton_GoogleMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,12 +100,12 @@
 				4C4A874928383A820011A48B /* Views */,
 				4C4A8739283839E90011A48B /* Controllers */,
 				4C4A873E28383A3C0011A48B /* Model */,
-				4C3422AC2837D912005886A9 /* CurrrentRideViewController.swift */,
+				4C998610283A31130082A884 /* Extensions */,
+				4C998613283A31D40082A884 /* Utils */,
 				4C3422AE2837D912005886A9 /* Main.storyboard */,
 				4C3422B32837D916005886A9 /* LaunchScreen.storyboard */,
 				4C3422B12837D916005886A9 /* Assets.xcassets */,
 				4C3422B62837D916005886A9 /* Info.plist */,
-				4C4A874E28383B400011A48B /* UIView+Extensions.swift */,
 			);
 			path = Tekton_GoogleMaps;
 			sourceTree = "<group>";
@@ -111,6 +117,7 @@
 				4C4A873A28383A070011A48B /* MapViewController.swift */,
 				4C4A873C28383A290011A48B /* TypesTableViewController.swift */,
 				4C4A87502838434A0011A48B /* MyProgressViewController.swift */,
+				4C8BB7A82839414E004BD2EE /* TimerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -143,6 +150,24 @@
 				4C4A8754283844310011A48B /* MyProgressCell.xib */,
 			);
 			path = MyProgressCell;
+			sourceTree = "<group>";
+		};
+		4C998610283A31130082A884 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4C4A874E28383B400011A48B /* UIView+Extensions.swift */,
+				4C998611283A312A0082A884 /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4C998613283A31D40082A884 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4C998614283A31F30082A884 /* Toast.swift */,
+				4C998616283A32230082A884 /* Colors.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		969783759FD0A9C0BEABD1D0 /* Pods */ = {
@@ -279,9 +304,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C3422AD2837D912005886A9 /* CurrrentRideViewController.swift in Sources */,
 				4C4A874428383A620011A48B /* GoogleDataProvider.swift in Sources */,
+				4C998615283A31F30082A884 /* Toast.swift in Sources */,
 				4C4A874828383A620011A48B /* GooglePlace.swift in Sources */,
+				4C998617283A32230082A884 /* Colors.swift in Sources */,
 				4C4A874528383A620011A48B /* CLLocationCoordinate+Extensions.swift in Sources */,
 				4C4A874628383A620011A48B /* PlaceMarker.swift in Sources */,
 				4C4A873D28383A2A0011A48B /* TypesTableViewController.swift in Sources */,
@@ -289,6 +315,8 @@
 				4C3422A92837D912005886A9 /* AppDelegate.swift in Sources */,
 				4C4A87512838434A0011A48B /* MyProgressViewController.swift in Sources */,
 				4C3422AB2837D912005886A9 /* SceneDelegate.swift in Sources */,
+				4C8BB7A92839414E004BD2EE /* TimerViewController.swift in Sources */,
+				4C998612283A312A0082A884 /* UIColor+Extensions.swift in Sources */,
 				4C4A8755283844310011A48B /* MyProgressCell.swift in Sources */,
 				4C4A874B28383A9F0011A48B /* MarkerInfoView.swift in Sources */,
 				4C4A874728383A620011A48B /* Metadata.swift in Sources */,
@@ -443,6 +471,8 @@
 				DEVELOPMENT_TEAM = JGHBCD3B3C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tekton_GoogleMaps/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Tekton Dev";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Por favor ,autorice el acceso a su ubicación.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -473,6 +503,8 @@
 				DEVELOPMENT_TEAM = JGHBCD3B3C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tekton_GoogleMaps/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Tekton Dev";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Por favor ,autorice el acceso a su ubicación.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

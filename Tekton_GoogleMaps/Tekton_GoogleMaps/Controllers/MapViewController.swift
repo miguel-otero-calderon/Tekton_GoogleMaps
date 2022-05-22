@@ -6,10 +6,18 @@ class MapViewController: UIViewController {
   @IBOutlet private weak var mapView: GMSMapView!
   @IBOutlet private weak var mapCenterPinImage: UIImageView!
   @IBOutlet private weak var pinImageVerticalConstraint: NSLayoutConstraint!
+    
   private var searchedTypes = ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant"]
   private let locationManager = CLLocationManager()
   private let dataProvider = GoogleDataProvider()
   private let searchRadius: Double = 1000
+    
+
+    @IBAction func addButtonAction(_ sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: TimerViewController.identifier) as! TimerViewController
+        self.present(vc, animated: true)
+    }
 }
 
 // MARK: - Lifecycle

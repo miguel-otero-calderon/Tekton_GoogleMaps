@@ -10,8 +10,6 @@ import GoogleMaps
 import CoreLocation
 
 protocol MapViewPresenterProtocol {
-    func secondsToHoursMinutesSeconds(seconds:Int) -> (Int,Int,Int)
-    func makeTimeString(hours: Int, minutes: Int, seconds: Int ) -> String
     func getAddress(coordinate: CLLocationCoordinate2D)
 }
 
@@ -21,7 +19,6 @@ class MapViewPresenter {
     init(view: MapViewControllerProtocol) {
         self.view = view
     }
-    
 }
 extension MapViewPresenter: MapViewPresenterProtocol {
     
@@ -43,21 +40,5 @@ extension MapViewPresenter: MapViewPresenterProtocol {
             
             self.view?.getLocation(location: myLocation)
         }
-    }
-    func secondsToHoursMinutesSeconds(seconds:Int) -> (Int,Int,Int) {
-        return ((seconds / 3600),
-                ((seconds % 3600) / 60),
-                ((seconds % 3600) % 60)
-        )
-    }
-    
-    func makeTimeString(hours: Int, minutes: Int, seconds: Int ) -> String {
-        var timeString = ""
-        timeString += String(format: "%02d", hours)
-        timeString += " : "
-        timeString += String(format: "%02d", minutes)
-        timeString += " : "
-        timeString += String(format: "%02d", seconds)
-       return timeString
     }
 }

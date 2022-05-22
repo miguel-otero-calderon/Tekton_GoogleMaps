@@ -68,11 +68,8 @@ class MapViewController: UIViewController {
     
     @objc func timerEvent() {
         seconds = seconds + 1
-        guard let time = presenter?.secondsToHoursMinutesSeconds(seconds: seconds) else {
-            return
-        }
-        let timeString = presenter?.makeTimeString(hours: time.0, minutes: time.1, seconds: time.2)
-        timerLabel.text = timeString
+        let timer = MapViewModel.Timer(mySeconds: seconds)
+        timerLabel.text = timer.toString()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -199,10 +196,11 @@ extension MapViewController: GMSMapViewDelegate {
 extension MapViewController: MapViewControllerProtocol {
     func getLocation(location: MapViewModel.Location) {
         if route == nil {
-            route = MapViewModel.Route(source: location, destination: nil)
+            route = MapViewModel.Route(source: location, destination: nil, timer: nil)
         } else {
             if let source = route?.source {
-                route = MapViewModel.Route(source: source, destination: location)
+                let timer = MapViewModel.Timer(mySeconds: seconds)
+                route = MapViewModel.Route(source: source, destination: location, timer: timer)
                 //guardar route
                 print("route: \(route!)")
             }

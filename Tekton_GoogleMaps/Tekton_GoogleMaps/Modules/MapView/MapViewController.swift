@@ -11,6 +11,8 @@ class MapViewController: UIViewController {
     @IBOutlet private weak var mapView: GMSMapView!
     @IBOutlet private weak var mapCenterPinImage: UIImageView!
     @IBOutlet private weak var pinImageVerticalConstraint: NSLayoutConstraint!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var addView: UIView!
     
     //timerView
     @IBOutlet weak var timerView: UIView!
@@ -22,6 +24,11 @@ class MapViewController: UIViewController {
     
     //saveView
     @IBOutlet weak var saveView: UIView!
+    @IBOutlet weak var okLabel: UILabel!
+    @IBOutlet weak var okButton: UIButton!
+
+    //confirmationView
+    @IBOutlet weak var confirmationView: UIView!
     @IBOutlet weak var timerSaveLabel: UILabel!
     @IBOutlet weak var storeLabel: UILabel!
     @IBOutlet weak var deleteLabel: UILabel!
@@ -58,10 +65,10 @@ class MapViewController: UIViewController {
         }
         
         mapView.delegate = self
-        timerView.isHidden = true
         timerView.layer.cornerRadius = 24
-        saveView.isHidden = true
         saveView.layer.cornerRadius = 24
+        confirmationView.layer.cornerRadius = 24
+        resetState()
     }
     
     @IBAction func starAction(_ sender: Any) {
@@ -82,18 +89,32 @@ class MapViewController: UIViewController {
         stopButton.isEnabled = false
         typeRequest = .finishLocation
         locationManager.requestLocation()
-        timerView.isHidden = true
     }
     
     @IBAction func storeAction(_ sender: Any) {
-        
+        saveView.hide()
+        confirmationView.show()
+//        resetState()
+    }
+    
+    fileprivate func resetState() {
+        route = nil
+        typeRequest = .noRoute
+        seconds = 0
+        saveView.hide()
+        confirmationView.hide()
+        timerView.hide()
+        addView.show()
+        addButton.show()
+        locationManager.requestLocation()
     }
     
     @IBAction func deleteAction(_ sender: Any) {
-        route = nil
-        typeRequest = .noRoute
-        saveView.isHidden = true
-        locationManager.requestLocation()
+        resetState()
+    }
+    
+    @IBAction func okAction(_ sender: Any) {
+        resetState()
     }
     
     @objc func timerEvent() {
@@ -114,12 +135,16 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func addButtonAction(_ sender: UIButton) {
-        timerView.isHidden = false
+        timerView.show()
+        addButton.hide()
+        addView.hide()
+        let timer = MapViewModel.Timer(mySeconds: 0)
+        timerLabel.text = timer.toString()
     }
     
-    func showSaveView() {
-        timerView.isHidden = true
-        saveView.isHidden = false
+    func showSaveRoute() {
+        timerView.hide()
+        saveView.show()
         guard let route = route else {
             return
         }
@@ -265,11 +290,7 @@ extension MapViewController: MapViewControllerProtocol {
             if let source = route?.source {
                 let timer = MapViewModel.Timer(mySeconds: seconds)
                 route = MapViewModel.Route(source: source, destination: location, timer: timer)
-                showSaveView()
-                timerView.isHidden = true
-                //guardar route
-                print("route: \(route!)")
-                route = nil
+                self.showSaveRoute()
                 self.typeRequest = .noRoute
             }
         case .noRoute:

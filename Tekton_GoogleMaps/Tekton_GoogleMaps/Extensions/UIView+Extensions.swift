@@ -8,6 +8,15 @@
 import UIKit
 
 extension UIView {
+    func hide()  {
+        self.alpha = 0
+        self.isHidden = true
+    }
+    func show()  {
+        self.alpha = 1
+        self.isHidden = false
+    }
+    
   func lock() {
     if let _ = viewWithTag(10) {
       //View is already locked

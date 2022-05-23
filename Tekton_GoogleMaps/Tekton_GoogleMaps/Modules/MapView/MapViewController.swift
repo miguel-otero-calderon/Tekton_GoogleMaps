@@ -42,6 +42,8 @@ class MapViewController: UIViewController {
     var isTest = true
     let starLocationTest = CLLocation(latitude: -16.384376, longitude: -71.550363)
     let finishLocationTest = CLLocation(latitude: -16.387243958956638, longitude: -71.54956296086311)
+    static let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    static var routesPersistence: [RoutePersistence] = []
     
     private var searchedTypes = ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant"]
     private let locationManager = CLLocationManager()
@@ -93,8 +95,13 @@ class MapViewController: UIViewController {
     
     @IBAction func storeAction(_ sender: Any) {
         saveView.hide()
+        guard let route = route else {
+            return
+        }
+        let routePerssitence = RoutePersistence(context: MapViewController.context)
+        routePerssitence.setRoute(route: route)
+        try! MapViewController.context.save()
         confirmationView.show()
-//        resetState()
     }
     
     fileprivate func resetState() {
@@ -152,7 +159,7 @@ class MapViewController: UIViewController {
             return
         }
         timerSaveLabel.text = timer.toString()
-        let distance = route.getDistance().toString(decimal: 2)
+        let distance = route.getDistanceKms().toString(decimal: 2)
         diatanceLabel.text = "\(distance) km"
     }
 }
@@ -284,12 +291,14 @@ extension MapViewController: MapViewControllerProtocol {
     func getLocation(location: MapViewModel.Location) {
         switch self.typeRequest {
         case .initLocation:
-            route = MapViewModel.Route(source: location, destination: nil, timer: nil)
+            let id = getId()
+            route = MapViewModel.Route(id: id, source: location, destination: nil, timer: nil)
             self.typeRequest = .noRoute
         case .finishLocation:
             if let source = route?.source {
                 let timer = MapViewModel.Timer(mySeconds: seconds)
-                route = MapViewModel.Route(source: source, destination: location, timer: timer)
+                let id = getId()
+                route = MapViewModel.Route(id: id, source: source, destination: location, timer: timer)
                 self.showSaveRoute()
                 self.typeRequest = .noRoute
             }

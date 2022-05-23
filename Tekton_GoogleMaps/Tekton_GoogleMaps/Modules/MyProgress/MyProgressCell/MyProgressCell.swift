@@ -13,6 +13,7 @@ class MyProgressCell: UITableViewCell {
     @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     static let identifier = "MyProgressCell"
+    static let heightCell = 95.0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,24 +25,10 @@ class MyProgressCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupCell(data: MyProgressCellData) {
+    func setupCell(data: MyProgressModel.CellData) {
         self.timerLabel.text = data.timer
         self.sourceLabel.text = data.source
         self.targetLabel.text = data.target
         self.distanceLabel.text = data.distance
-    }
-}
-struct MyProgressCellData {
-    
-    let timer: String
-    let source: String
-    let target: String
-    let distance: String
-    
-    init(timer: String, source: String, target: String, distance: String) {
-        self.timer = timer
-        self.source = source
-        self.target = target
-        self.distance = distance
     }
 }

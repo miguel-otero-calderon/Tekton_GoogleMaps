@@ -10,19 +10,35 @@ import UIKit
 
 class MyProgressViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var runs: [MyProgressCellData] = [
-        MyProgressCellData(timer: "01:20:30", source: "A: Av. Aramburu 245 Surquillo", target: "B: Av. Brasil 245 Magdalena", distance: "20.0 km"),
-        MyProgressCellData(timer: "02:30:30", source: "A: Av. Aramburu 245 Surquillo", target: "B: Av. Brasil 245 Magdalena", distance: "20.0 km"),
-        MyProgressCellData(timer: "05:20:30", source: "A: Av. Aramburu 245 Surquillo", target: "B: Av. Brasil 245 Magdalena", distance: "20.0 km"),
-        MyProgressCellData(timer: "06:20:30", source: "A: Av. Aramburu 245 Surquillo", target: "B: Av. Brasil 245 Magdalena", distance: "20.0 km"),
-        MyProgressCellData(timer: "07:20:30", source: "A: Av. Aramburu 245 Surquillo", target: "B: Av. Brasil 245 Magdalena", distance: "20.0 km"),
-    ]
+    var routes: [MapViewModel.Route] = []
+    var routesPersistence:[RoutePersistence] = []
+    static let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(
             UINib(nibName: MyProgressCell.identifier, bundle: nil), forCellReuseIdentifier: MyProgressCell.identifier)
         tableView.dataSource = self
         tableView.delegate = self
+        getRoutesLocal()
+    }
+    
+    func getRoutesLocal() {
+        do {
+            routesPersistence = try MapViewController.context.fetch(RoutePersistence.fetchRequest())
+        } catch {
+            print("Error retrieve core data")
+        }
+        
+        routes = []
+        for routePersistence in routesPersistence {
+            if let route = routePersistence.toRoute() {
+                routes.append(route)
+            }
+        }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,16 +54,18 @@ class MyProgressViewController: UIViewController {
 }
 extension MyProgressViewController: UITableViewDataSource , UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return runs.count
+        return routes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: MyProgressCell.identifier, for: indexPath) as? MyProgressCell
-        cell?.setupCell(data: runs[indexPath.row])
+        let route = routes[indexPath.row]
+        let data = MyProgressModel.CellData(route: route)
+        cell?.setupCell(data: data)
         return cell!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 95
+        return MyProgressCell.heightCell
     }
 }

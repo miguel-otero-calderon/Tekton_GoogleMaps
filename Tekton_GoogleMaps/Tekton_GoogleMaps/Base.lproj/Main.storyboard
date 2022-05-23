@@ -11,7 +11,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="I8P-yN-WBm">
             <objects>
-                <tabBarController id="SHQ-90-Kw0" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SHQ-90-Kw0" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="yvT-x2-b1P"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MIh-YW-9AN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -31,7 +31,7 @@
         <!--Current Ride-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="MapViewController" customModule="Tekton_GoogleMaps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="MapViewController" customModule="Tekton_GoogleMaps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

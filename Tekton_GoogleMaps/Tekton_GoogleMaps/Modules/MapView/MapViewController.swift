@@ -73,6 +73,16 @@ class MapViewController: UIViewController {
         resetState()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     @IBAction func starAction(_ sender: Any) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerEvent), userInfo: nil, repeats: true)
         stopLabel.textColor = UIColor.orange
@@ -122,7 +132,9 @@ class MapViewController: UIViewController {
     
     @IBAction func okAction(_ sender: Any) {
         showPath()
-        //        resetState()
+        addView.show()
+        addButton.show()
+        seconds = 0
     }
     
     func showPath() {

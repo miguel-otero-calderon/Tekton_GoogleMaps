@@ -25,6 +25,10 @@
 		4C4A87512838434A0011A48B /* MyProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A87502838434A0011A48B /* MyProgressViewController.swift */; };
 		4C4A8755283844310011A48B /* MyProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A8753283844310011A48B /* MyProgressCell.swift */; };
 		4C4A8756283844310011A48B /* MyProgressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4A8754283844310011A48B /* MyProgressCell.xib */; };
+		4C57080F283BAFDB00C0271D /* Onboarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C57080E283BAFDB00C0271D /* Onboarding1ViewController.swift */; };
+		4C7926A4283BB42200548A60 /* Onboarding2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7926A3283BB42200548A60 /* Onboarding2ViewController.swift */; };
+		4C7926A6283BB43B00548A60 /* Onboarding3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7926A5283BB43B00548A60 /* Onboarding3ViewController.swift */; };
+		4C7926A8283BB84300548A60 /* MainOnboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7926A7283BB84300548A60 /* MainOnboarding.storyboard */; };
 		4C966913283B3C28000863D4 /* Tekton_GoogleMaps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C966911283B3C28000863D4 /* Tekton_GoogleMaps.xcdatamodeld */; };
 		4C966918283B40F5000863D4 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C966917283B40F5000863D4 /* CoreDataModel.swift */; };
 		4C966920283B46DE000863D4 /* RoutePersistence+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96691E283B46DE000863D4 /* RoutePersistence+CoreDataClass.swift */; };
@@ -35,10 +39,11 @@
 		4C998617283A32230082A884 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C998616283A32230082A884 /* Colors.swift */; };
 		4C99861B283A3F890082A884 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99861A283A3F890082A884 /* MapViewModel.swift */; };
 		4C99861D283A3F9F0082A884 /* MapViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99861C283A3F9F0082A884 /* MapViewPresenter.swift */; };
-		E489ECCD44D97B1088658305 /* Pods_Tekton_GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2E9E0CEF14DBD5AAAC2445B /* Pods_Tekton_GoogleMaps.framework */; };
+		ABB870024470974E210AA70F /* Pods_Tekton_GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC9975325C235C1C4E31FE4 /* Pods_Tekton_GoogleMaps.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EA2C6A02014FC1305272435 /* Pods-Tekton_GoogleMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tekton_GoogleMaps.release.xcconfig"; path = "Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps.release.xcconfig"; sourceTree = "<group>"; };
 		4C3422A52837D912005886A9 /* Tekton_GoogleMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tekton_GoogleMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C3422A82837D912005886A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C3422AA2837D912005886A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +64,10 @@
 		4C4A87502838434A0011A48B /* MyProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProgressViewController.swift; sourceTree = "<group>"; };
 		4C4A8753283844310011A48B /* MyProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProgressCell.swift; sourceTree = "<group>"; };
 		4C4A8754283844310011A48B /* MyProgressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProgressCell.xib; sourceTree = "<group>"; };
+		4C57080E283BAFDB00C0271D /* Onboarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1ViewController.swift; sourceTree = "<group>"; };
+		4C7926A3283BB42200548A60 /* Onboarding2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding2ViewController.swift; sourceTree = "<group>"; };
+		4C7926A5283BB43B00548A60 /* Onboarding3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3ViewController.swift; sourceTree = "<group>"; };
+		4C7926A7283BB84300548A60 /* MainOnboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainOnboarding.storyboard; sourceTree = "<group>"; };
 		4C966912283B3C28000863D4 /* Tekton_GoogleMaps.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tekton_GoogleMaps.xcdatamodel; sourceTree = "<group>"; };
 		4C966917283B40F5000863D4 /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 		4C96691E283B46DE000863D4 /* RoutePersistence+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RoutePersistence+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -69,9 +78,8 @@
 		4C998616283A32230082A884 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4C99861A283A3F890082A884 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		4C99861C283A3F9F0082A884 /* MapViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewPresenter.swift; sourceTree = "<group>"; };
-		E2B0A740363BBAABB9E363A5 /* Pods-Tekton_GoogleMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tekton_GoogleMaps.debug.xcconfig"; path = "Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps.debug.xcconfig"; sourceTree = "<group>"; };
-		F2E9E0CEF14DBD5AAAC2445B /* Pods_Tekton_GoogleMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tekton_GoogleMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8A57F26FA4735F29D15855C /* Pods-Tekton_GoogleMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tekton_GoogleMaps.release.xcconfig"; path = "Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps.release.xcconfig"; sourceTree = "<group>"; };
+		8EC9975325C235C1C4E31FE4 /* Pods_Tekton_GoogleMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tekton_GoogleMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98C6F7CE3E2724A37630F754 /* Pods-Tekton_GoogleMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tekton_GoogleMaps.debug.xcconfig"; path = "Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,20 +87,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E489ECCD44D97B1088658305 /* Pods_Tekton_GoogleMaps.framework in Frameworks */,
+				ABB870024470974E210AA70F /* Pods_Tekton_GoogleMaps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		498BE5BD7874F244DAE4D0C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8EC9975325C235C1C4E31FE4 /* Pods_Tekton_GoogleMaps.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4C34229C2837D912005886A9 = {
 			isa = PBXGroup;
 			children = (
 				4C3422A72837D912005886A9 /* Tekton_GoogleMaps */,
 				4C3422A62837D912005886A9 /* Products */,
 				969783759FD0A9C0BEABD1D0 /* Pods */,
-				6BF598C398EF288AB7930739 /* Frameworks */,
+				498BE5BD7874F244DAE4D0C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +133,7 @@
 				4C998610283A31130082A884 /* Extensions */,
 				4C998613283A31D40082A884 /* Utils */,
 				4C3422AE2837D912005886A9 /* Main.storyboard */,
+				4C7926A7283BB84300548A60 /* MainOnboarding.storyboard */,
 				4C3422B32837D916005886A9 /* LaunchScreen.storyboard */,
 				4C3422B12837D916005886A9 /* Assets.xcassets */,
 				4C3422B62837D916005886A9 /* Info.plist */,
@@ -128,6 +145,9 @@
 			isa = PBXGroup;
 			children = (
 				4C4A873C28383A290011A48B /* TypesTableViewController.swift */,
+				4C57080E283BAFDB00C0271D /* Onboarding1ViewController.swift */,
+				4C7926A3283BB42200548A60 /* Onboarding2ViewController.swift */,
+				4C7926A5283BB43B00548A60 /* Onboarding3ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -236,19 +256,11 @@
 			path = MapView;
 			sourceTree = "<group>";
 		};
-		6BF598C398EF288AB7930739 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F2E9E0CEF14DBD5AAAC2445B /* Pods_Tekton_GoogleMaps.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		969783759FD0A9C0BEABD1D0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E2B0A740363BBAABB9E363A5 /* Pods-Tekton_GoogleMaps.debug.xcconfig */,
-				F8A57F26FA4735F29D15855C /* Pods-Tekton_GoogleMaps.release.xcconfig */,
+				98C6F7CE3E2724A37630F754 /* Pods-Tekton_GoogleMaps.debug.xcconfig */,
+				2EA2C6A02014FC1305272435 /* Pods-Tekton_GoogleMaps.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -260,11 +272,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C3422B92837D916005886A9 /* Build configuration list for PBXNativeTarget "Tekton_GoogleMaps" */;
 			buildPhases = (
-				93BCA40E42486B4A08BC3439 /* [CP] Check Pods Manifest.lock */,
+				06912D4641790D642C557135 /* [CP] Check Pods Manifest.lock */,
 				4C3422A12837D912005886A9 /* Sources */,
 				4C3422A22837D912005886A9 /* Frameworks */,
 				4C3422A32837D912005886A9 /* Resources */,
-				1ECCC7010EDEC37716D316B6 /* [CP] Copy Pods Resources */,
+				97EE53AF06AFBE1BA40C233C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -315,6 +327,7 @@
 			files = (
 				4C4A874D28383B0F0011A48B /* MarkerInfoView.xib in Resources */,
 				4C3422B52837D916005886A9 /* LaunchScreen.storyboard in Resources */,
+				4C7926A8283BB84300548A60 /* MainOnboarding.storyboard in Resources */,
 				4C3422B22837D916005886A9 /* Assets.xcassets in Resources */,
 				4C3422B02837D912005886A9 /* Main.storyboard in Resources */,
 				4C4A8756283844310011A48B /* MyProgressCell.xib in Resources */,
@@ -324,24 +337,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1ECCC7010EDEC37716D316B6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		93BCA40E42486B4A08BC3439 /* [CP] Check Pods Manifest.lock */ = {
+		06912D4641790D642C557135 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -363,6 +359,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		97EE53AF06AFBE1BA40C233C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -370,8 +383,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C57080F283BAFDB00C0271D /* Onboarding1ViewController.swift in Sources */,
 				4C966920283B46DE000863D4 /* RoutePersistence+CoreDataClass.swift in Sources */,
 				4C4A874428383A620011A48B /* GoogleDataProvider.swift in Sources */,
+				4C7926A4283BB42200548A60 /* Onboarding2ViewController.swift in Sources */,
 				4C998615283A31F30082A884 /* Toast.swift in Sources */,
 				4C966921283B46DE000863D4 /* RoutePersistence+CoreDataProperties.swift in Sources */,
 				4C966913283B3C28000863D4 /* Tekton_GoogleMaps.xcdatamodeld in Sources */,
@@ -383,6 +398,7 @@
 				4C99861D283A3F9F0082A884 /* MapViewPresenter.swift in Sources */,
 				4C4A873D28383A2A0011A48B /* TypesTableViewController.swift in Sources */,
 				4C4A874F28383B400011A48B /* UIView+Extensions.swift in Sources */,
+				4C7926A6283BB43B00548A60 /* Onboarding3ViewController.swift in Sources */,
 				4C3422A92837D912005886A9 /* AppDelegate.swift in Sources */,
 				4C4A87512838434A0011A48B /* MyProgressViewController.swift in Sources */,
 				4C3422AB2837D912005886A9 /* SceneDelegate.swift in Sources */,
@@ -534,7 +550,7 @@
 		};
 		4C3422BA2837D916005886A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2B0A740363BBAABB9E363A5 /* Pods-Tekton_GoogleMaps.debug.xcconfig */;
+			baseConfigurationReference = 98C6F7CE3E2724A37630F754 /* Pods-Tekton_GoogleMaps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -548,6 +564,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -566,7 +583,7 @@
 		};
 		4C3422BB2837D916005886A9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8A57F26FA4735F29D15855C /* Pods-Tekton_GoogleMaps.release.xcconfig */;
+			baseConfigurationReference = 2EA2C6A02014FC1305272435 /* Pods-Tekton_GoogleMaps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -580,6 +597,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;

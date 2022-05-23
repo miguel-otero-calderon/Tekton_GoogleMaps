@@ -13,15 +13,10 @@ struct MyProgressModel {
         let source: String
         let target: String
         let distance: String
-        
-        init(timer: String, source: String, target: String, distance: String) {
-            self.timer = timer
-            self.source = source
-            self.target = target
-            self.distance = distance
-        }
+        let route: MapViewModel.Route
         
         init(route: MapViewModel.Route) {
+            self.route = route
             if let timer = route.timer?.toString() {
                 self.timer = timer
             } else {

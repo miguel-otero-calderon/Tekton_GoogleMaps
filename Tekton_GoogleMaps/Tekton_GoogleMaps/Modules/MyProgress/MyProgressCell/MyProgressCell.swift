@@ -14,7 +14,7 @@ class MyProgressCell: UITableViewCell {
     @IBOutlet weak var distanceLabel: UILabel!
     static let identifier = "MyProgressCell"
     static let heightCell = 95.0
-    
+    var data: MyProgressModel.CellData?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,5 +30,6 @@ class MyProgressCell: UITableViewCell {
         self.sourceLabel.text = data.source
         self.targetLabel.text = data.target
         self.distanceLabel.text = data.distance
+        self.data = data
     }
 }

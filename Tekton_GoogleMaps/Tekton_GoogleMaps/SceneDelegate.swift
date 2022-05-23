@@ -18,8 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             
-            UserDefaults.standard.set(false, forKey: "showOnboarding")
-            
             let showOnboarding = UserDefaults.standard.bool(forKey: "showOnboarding")
             if showOnboarding == false
             {

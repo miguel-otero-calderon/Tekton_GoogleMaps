@@ -26,7 +26,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var saveView: UIView!
     @IBOutlet weak var okLabel: UILabel!
     @IBOutlet weak var okButton: UIButton!
-
+    
     //confirmationView
     @IBOutlet weak var confirmationView: UIView!
     @IBOutlet weak var timerSaveLabel: UILabel!
@@ -122,7 +122,7 @@ class MapViewController: UIViewController {
     
     @IBAction func okAction(_ sender: Any) {
         showPath()
-//        resetState()
+        //        resetState()
     }
     
     func showPath() {
@@ -250,8 +250,7 @@ extension MapViewController: CLLocationManagerDelegate {
             zoom: 15,
             bearing: 0,
             viewingAngle: 0)
-//        fetchPlaces(near: location.coordinate)
-        
+        fetchPlaces(near: location.coordinate)        
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -314,7 +313,7 @@ extension MapViewController: GMSMapViewDelegate {
             }
             
             guard let jsonResult = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: Any],
-                    let jsonResponse = jsonResult as? [String: Any] else {
+                  let jsonResponse = jsonResult as? [String: Any] else {
                 print("error in JSONSerialization")
                 return
             }
@@ -326,7 +325,7 @@ extension MapViewController: GMSMapViewDelegate {
             guard let route = routes[0] as? [String: Any] else {
                 return
             }
-
+            
             guard let overview_polyline = route["overview_polyline"] as? [String: Any] else {
                 return
             }
@@ -337,8 +336,29 @@ extension MapViewController: GMSMapViewDelegate {
             
             //Call this method to draw path on map
             DispatchQueue.main.async {
-                 self.drawPath(from: polyLineString)
-             }
+                self.drawPath(from: polyLineString)
+                
+                // MARK: Marker for source location
+                let sourceMarker = GMSMarker()
+                if let coordinate = self.route?.source.location.coordinate {
+                    sourceMarker.position = coordinate
+                    sourceMarker.title = "Source"
+                    sourceMarker.snippet = self.route?.source.address
+                    sourceMarker.map = self.mapView
+                }
+                
+                // MARK: Marker for destination location
+                let destinationMarker = GMSMarker()
+                if let coordinate = self.route?.destination?.location.coordinate {
+                    destinationMarker.position = coordinate
+                    destinationMarker.title = "Destination"
+                    destinationMarker.snippet = self.route?.destination?.address ?? ""
+                    destinationMarker.map = self.mapView
+                }
+                
+                let camera = GMSCameraPosition(target: sourceMarker.position, zoom: 17)
+                self.mapView.animate(to: camera)
+            }
         })
         task.resume()
     }

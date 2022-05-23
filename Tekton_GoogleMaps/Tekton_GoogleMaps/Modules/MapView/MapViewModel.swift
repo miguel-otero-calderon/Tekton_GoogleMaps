@@ -28,7 +28,8 @@ struct MapViewModel {
                 return 0.0
             }
             let distanceInMeters = sourceLocation.distance(from: destinationLocation)
-            return distanceInMeters/1000
+            let distanceInKilometres = distanceInMeters/1000
+            return distanceInKilometres
         }
     }
     struct Location {
@@ -55,5 +56,10 @@ struct MapViewModel {
             timeString += String(format: "%02d", seconds)
            return timeString
         }
+    }
+    enum TypeRequest {
+        case initLocation
+        case finishLocation
+        case noRoute
     }
 }

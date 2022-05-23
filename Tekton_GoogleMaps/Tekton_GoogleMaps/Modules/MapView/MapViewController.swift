@@ -3,6 +3,7 @@ import GoogleMaps
 
 protocol MapViewControllerProtocol {
     func getLocation(location: MapViewModel.Location)
+    func getAddress(location: MapViewModel.Location)
 }
 
 class MapViewController: UIViewController {
@@ -18,8 +19,22 @@ class MapViewController: UIViewController {
     @IBOutlet weak var stopLabel: UILabel!
     @IBOutlet weak var starButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
+    
+    //saveView
+    @IBOutlet weak var saveView: UIView!
+    @IBOutlet weak var timerSaveLabel: UILabel!
+    @IBOutlet weak var storeLabel: UILabel!
+    @IBOutlet weak var deleteLabel: UILabel!
+    @IBOutlet weak var storeButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var diatanceLabel: UILabel!
+    
     var timer:Timer = Timer()
     var seconds: Int = 0
+    var typeRequest:MapViewModel.TypeRequest = .noRoute
+    var isTest = true
+    let starLocationTest = CLLocation(latitude: -16.384376, longitude: -71.550363)
+    let finishLocationTest = CLLocation(latitude: -16.387243958956638, longitude: -71.54956296086311)
     
     private var searchedTypes = ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant"]
     private let locationManager = CLLocationManager()
@@ -45,6 +60,8 @@ class MapViewController: UIViewController {
         mapView.delegate = self
         timerView.isHidden = true
         timerView.layer.cornerRadius = 24
+        saveView.isHidden = true
+        saveView.layer.cornerRadius = 24
     }
     
     @IBAction func starAction(_ sender: Any) {
@@ -53,6 +70,7 @@ class MapViewController: UIViewController {
         starLabel.textColor = UIColor.gray
         starButton.isEnabled = false
         stopButton.isEnabled = true
+        typeRequest = .initLocation
         locationManager.requestLocation()
     }
     
@@ -62,8 +80,20 @@ class MapViewController: UIViewController {
         stopLabel.textColor = UIColor.gray
         starButton.isEnabled = true
         stopButton.isEnabled = false
+        typeRequest = .finishLocation
         locationManager.requestLocation()
         timerView.isHidden = true
+    }
+    
+    @IBAction func storeAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func deleteAction(_ sender: Any) {
+        route = nil
+        typeRequest = .noRoute
+        saveView.isHidden = true
+        locationManager.requestLocation()
     }
     
     @objc func timerEvent() {
@@ -85,6 +115,20 @@ class MapViewController: UIViewController {
     
     @IBAction func addButtonAction(_ sender: UIButton) {
         timerView.isHidden = false
+    }
+    
+    func showSaveView() {
+        timerView.isHidden = true
+        saveView.isHidden = false
+        guard let route = route else {
+            return
+        }
+        guard let timer = route.timer else {
+            return
+        }
+        timerSaveLabel.text = timer.toString()
+        let distance = route.getDistance().toString(decimal: 2)
+        diatanceLabel.text = "\(distance) km"
     }
 }
 
@@ -132,11 +176,29 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else {
+        guard var location = locations.first else {
             return
         }
         
-        self.presenter?.getAddress(coordinate: location.coordinate)
+        if isTest {
+            switch self.typeRequest {
+            case .initLocation:
+                location = starLocationTest
+            case .finishLocation:
+                location = finishLocationTest
+            case .noRoute:
+                break
+            }
+        }
+        
+        switch self.typeRequest {
+        case .initLocation:
+            self.presenter?.getLocation(coordinate: location.coordinate)
+        case .finishLocation:
+            self.presenter?.getLocation(coordinate: location.coordinate)
+        case .noRoute:
+            break
+        }
         
         mapView.camera = GMSCameraPosition(
             target: location.coordinate,
@@ -195,16 +257,28 @@ extension MapViewController: GMSMapViewDelegate {
 
 extension MapViewController: MapViewControllerProtocol {
     func getLocation(location: MapViewModel.Location) {
-        if route == nil {
+        switch self.typeRequest {
+        case .initLocation:
             route = MapViewModel.Route(source: location, destination: nil, timer: nil)
-        } else {
+            self.typeRequest = .noRoute
+        case .finishLocation:
             if let source = route?.source {
                 let timer = MapViewModel.Timer(mySeconds: seconds)
                 route = MapViewModel.Route(source: source, destination: location, timer: timer)
+                showSaveView()
+                timerView.isHidden = true
                 //guardar route
                 print("route: \(route!)")
+                route = nil
+                self.typeRequest = .noRoute
             }
+        case .noRoute:
+            break
         }
+        //UI
+        getAddress(location: location)
+    }
+    func getAddress(location: MapViewModel.Location) {
         //UI
         self.addressLabel.unlock()
         self.addressLabel.text = location.address

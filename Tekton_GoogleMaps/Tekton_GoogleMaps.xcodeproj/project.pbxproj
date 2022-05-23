@@ -30,7 +30,7 @@
 		4C998617283A32230082A884 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C998616283A32230082A884 /* Colors.swift */; };
 		4C99861B283A3F890082A884 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99861A283A3F890082A884 /* MapViewModel.swift */; };
 		4C99861D283A3F9F0082A884 /* MapViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99861C283A3F9F0082A884 /* MapViewPresenter.swift */; };
-		DC0FD31C7A1F135CD4C646DF /* Pods_Tekton_GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63B30BAA439BAC5D20CE816 /* Pods_Tekton_GoogleMaps.framework */; };
+		930F290543133CBB1D410DC9 /* Pods_Tekton_GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEDD5EAD4CD4E3A287171B8 /* Pods_Tekton_GoogleMaps.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,9 +59,9 @@
 		4C998616283A32230082A884 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4C99861A283A3F890082A884 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		4C99861C283A3F9F0082A884 /* MapViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewPresenter.swift; sourceTree = "<group>"; };
-		539B0E50DD1861359BA9C40B /* Pods-Tekton_GoogleMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tekton_GoogleMaps.debug.xcconfig"; path = "Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps.debug.xcconfig"; sourceTree = "<group>"; };
-		E61313BAE4BEE59785841D9F /* Pods-Tekton_GoogleMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tekton_GoogleMaps.release.xcconfig"; path = "Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps.release.xcconfig"; sourceTree = "<group>"; };
-		F63B30BAA439BAC5D20CE816 /* Pods_Tekton_GoogleMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tekton_GoogleMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EC13C384359F0CF58DD6523 /* Pods-Tekton_GoogleMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tekton_GoogleMaps.debug.xcconfig"; path = "Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps.debug.xcconfig"; sourceTree = "<group>"; };
+		CA54C1C741ED74780A203C41 /* Pods-Tekton_GoogleMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tekton_GoogleMaps.release.xcconfig"; path = "Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps.release.xcconfig"; sourceTree = "<group>"; };
+		FAEDD5EAD4CD4E3A287171B8 /* Pods_Tekton_GoogleMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tekton_GoogleMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,20 +69,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC0FD31C7A1F135CD4C646DF /* Pods_Tekton_GoogleMaps.framework in Frameworks */,
+				930F290543133CBB1D410DC9 /* Pods_Tekton_GoogleMaps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		177B836C75F3F78CD0B0CF06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAEDD5EAD4CD4E3A287171B8 /* Pods_Tekton_GoogleMaps.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4C34229C2837D912005886A9 = {
 			isa = PBXGroup;
 			children = (
 				4C3422A72837D912005886A9 /* Tekton_GoogleMaps */,
 				4C3422A62837D912005886A9 /* Products */,
 				969783759FD0A9C0BEABD1D0 /* Pods */,
-				98A690BCC730F3E81FC0D1A8 /* Frameworks */,
+				177B836C75F3F78CD0B0CF06 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,18 +200,10 @@
 		969783759FD0A9C0BEABD1D0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				539B0E50DD1861359BA9C40B /* Pods-Tekton_GoogleMaps.debug.xcconfig */,
-				E61313BAE4BEE59785841D9F /* Pods-Tekton_GoogleMaps.release.xcconfig */,
+				8EC13C384359F0CF58DD6523 /* Pods-Tekton_GoogleMaps.debug.xcconfig */,
+				CA54C1C741ED74780A203C41 /* Pods-Tekton_GoogleMaps.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		98A690BCC730F3E81FC0D1A8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F63B30BAA439BAC5D20CE816 /* Pods_Tekton_GoogleMaps.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,11 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C3422B92837D916005886A9 /* Build configuration list for PBXNativeTarget "Tekton_GoogleMaps" */;
 			buildPhases = (
-				8187D3F9287D333E8138FCB5 /* [CP] Check Pods Manifest.lock */,
+				3EB7B8CE9373C405C3D3B439 /* [CP] Check Pods Manifest.lock */,
 				4C3422A12837D912005886A9 /* Sources */,
 				4C3422A22837D912005886A9 /* Frameworks */,
 				4C3422A32837D912005886A9 /* Resources */,
-				5E89097E35752405697F3719 /* [CP] Copy Pods Resources */,
+				3BF3BF346674AAEDB31E007B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -277,7 +277,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5E89097E35752405697F3719 /* [CP] Copy Pods Resources */ = {
+		3BF3BF346674AAEDB31E007B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -294,7 +294,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tekton_GoogleMaps/Pods-Tekton_GoogleMaps-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8187D3F9287D333E8138FCB5 /* [CP] Check Pods Manifest.lock */ = {
+		3EB7B8CE9373C405C3D3B439 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -482,7 +482,7 @@
 		};
 		4C3422BA2837D916005886A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 539B0E50DD1861359BA9C40B /* Pods-Tekton_GoogleMaps.debug.xcconfig */;
+			baseConfigurationReference = 8EC13C384359F0CF58DD6523 /* Pods-Tekton_GoogleMaps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -514,7 +514,7 @@
 		};
 		4C3422BB2837D916005886A9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E61313BAE4BEE59785841D9F /* Pods-Tekton_GoogleMaps.release.xcconfig */;
+			baseConfigurationReference = CA54C1C741ED74780A203C41 /* Pods-Tekton_GoogleMaps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
